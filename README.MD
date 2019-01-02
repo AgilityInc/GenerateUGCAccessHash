@@ -8,6 +8,8 @@ This repository includes a Utility function to generate your hash, and an HtmlHe
 2. Add the HtmlHelpers class to your project, and ensure you update the namespace appropriately.
 3. Use the HtmlHelper in your _Layout.cshtml masterpage to ensure your client app can use these values on each page.
 ``` html
+@using Website.Helpers
+...
 @Html.GetUGCDataServiceInitializationScript()
 ```
 *Will output:*
