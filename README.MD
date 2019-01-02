@@ -10,7 +10,22 @@ This repository includes a Utility function to generate your hash, and an HtmlHe
 ``` html
 @using Website.Helpers
 ...
-@Html.GetUGCDataServiceInitializationScript()
+<body>
+    <!-- Inner Template Render: Start -->
+    @RenderBody()
+    <!-- Inner Template Render: End -->
+    
+    <!-- Init UGC Access Hash: Start -->
+    @Html.GetUGCDataServiceInitializationScript()
+    <!-- Init UGC Access Hash: End -->
+
+    <!-- Main JS Bundle: Start -->
+    <script src="~/dist/main.js" type="text/javascript" asp-append-version="true"></script>
+    <!-- Main JS Bundle: End -->
+
+    @RenderSection("Scripts", required: false)
+</body>
+...
 ```
 *Will output:*
 ``` html
